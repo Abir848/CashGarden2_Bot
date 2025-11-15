@@ -380,7 +380,7 @@
         }
         
         .notification.info {
-            border-left: 44px solid var(--primary-color);
+            border-left: 4px solid var(--primary-color); /* Corrected from 44px */
         }
         
         @keyframes pulse {
@@ -951,8 +951,6 @@
         function watchAd() {
             updateDailyAdCount(); // Check and reset daily count if needed
 
-            if (isAdLoading) return;
-            
             if (dailyAdsWatched >= MAX_ADS_PER_DAY) {
                 document.getElementById('ad-status').innerHTML = '<i class="fas fa-exclamation-circle"></i> আজকের দৈনিক বিজ্ঞাপন সীমা শেষ হয়েছে। আগামীকাল আবার চেষ্টা করুন।';
                 document.getElementById('watch-ad-btn').disabled = true;
@@ -1094,7 +1092,7 @@
             document.getElementById('stop-auto-btn-earn').disabled = true;
             
             // Only re-enable watch ad button if ad system is ready and daily limit not reached
-            if (typeof window.show_10182944 === 'function' && dailyAdsWatched < MAX_ADS_PER_DAY) {
+            if (typeof window.show_10189622 === 'function' && dailyAdsWatched < MAX_ADS_PER_DAY) {
                 document.getElementById('watch-ad-btn').disabled = false;
                 document.getElementById('watch-ad-btn-earn').disabled = false;
             } else if (dailyAdsWatched >= MAX_ADS_PER_DAY) {
